@@ -1,8 +1,4 @@
 package Codewars;
-
-import java.util.Arrays;
-import java.util.List;
-
 /*
 Given an array of integers, find the one that appears an odd number of times.
 
