@@ -11,7 +11,7 @@ fun findWordsContaining(words: Array<String>, x: Char): List<Int> {
     }
     return occurence.toList()
 }
-
+//259ms | 40.24mb
 /*
 You are given a 0-indexed array of strings words and a character x.
 
