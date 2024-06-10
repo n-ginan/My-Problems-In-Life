@@ -1,24 +1,23 @@
 fun main() {
-    val nums = intArrayOf(3, 3)
-    val target = 6
-    val result = twoSum(nums, target)
-    val index1 = result[0]
-    val index2 = result[1]
-    println("Indices: ${result.joinToString(", ")}")
-    println("Values: ${nums[index1]}, ${nums[index2]}")
+    print(twoSum(intArrayOf(3,3), 6)[0])
 }
 
 fun twoSum(nums: IntArray, target: Int): IntArray {
-    for (i in nums.indices) {
-        for (j in i+1 until nums.size) {
-            if (nums[i] + nums[j] == target) {
-                return intArrayOf(i, j)
+    var x = 0
+    var y = x+1
+    do {
+        when {
+            y == nums.size -> {
+                ++x
+                y = x+1
             }
+            nums[x] + nums[y] != target -> y++
+            nums[x] + nums[y] == target -> return intArrayOf(x, y)
         }
-    }
+    } while(x != nums.size - 1)
     return intArrayOf(0)
 }
-
+// 256ms | 37.95mb
 /* 
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
